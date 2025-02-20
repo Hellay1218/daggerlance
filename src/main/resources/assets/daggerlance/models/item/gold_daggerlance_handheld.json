@@ -1,0 +1,7 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "daggerlance:item/template_daggerlance_handheld",
+	"textures": {
+		"layer0": "daggerlance:item/gold_daggerlance_handheld"
+	}
+}

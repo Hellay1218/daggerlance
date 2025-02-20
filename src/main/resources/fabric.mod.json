@@ -1,0 +1,40 @@
+{
+	"schemaVersion": 1,
+	"id": "daggerlance",
+	"version": "${version}",
+	"name": "DaggerLance",
+	"description": "DaggerLance idk",
+	"authors": [
+		"_Hellay!"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/daggerlance/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.hellay.daggerlance.DaggerLance"
+		],
+		"client": [
+			"net.hellay.daggerlance.DaggerLanceClient"
+		],
+		"fabric-datagen": [
+			"net.hellay.daggerlance.DaggerLanceDataGenerator"
+		]
+	},
+	"mixins": [
+		"daggerlance.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.16.0",
+		"minecraft": "~1.20.1",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}

@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "package": "net.hellay.daggerlance.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "WitherSkeletonEntityMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "client": [
+    "ItemRendererMixin",
+    "ModelLoaderMixin"
+  ]
+}

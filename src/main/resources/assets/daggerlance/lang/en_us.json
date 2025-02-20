@@ -1,0 +1,13 @@
+{
+  "item.daggerlance.daggerlance": "DaggerLance",
+  "itemgroup.daggerlance.daggerlance_group": "DaggerLance",
+
+  "tooltip.daggerlance.gold": "Royalty",
+  "tooltip.daggerlance.vana": "Vana",
+  "tooltip.daggerlance.empathy": "Empathy",
+  "tooltip.daggerlance.jade": "Jade",
+  "tooltip.daggerlance.moon": "Moon",
+  "tooltip.daggerlance.vana_lore": "A good example of barrens craftsmanship. Vana is an ore used by barrens \nthat is found in their dimension. After many years they have mastered using vana\nto the point that they can make advance items that nobody can replicate.\nThis is purely designed to permanently harm your opponent, a dead soldier is \nthe proof of how strong their will is, an injured one is the proof of how far\nbarrens will to go to make you suffer before death",
+
+  "tooltip.daggerlance.hidden":"Press [Shift] to show lore"
+}

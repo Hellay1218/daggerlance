@@ -23,8 +23,8 @@ public abstract class ModelLoaderMixin {
     @Shadow
     protected abstract void addModel(ModelIdentifier modelid);
 
-    @Inject(method = "<init>" , at = @At(value = "INVOKE", target = "Lnet/minecraft/client/render/model/ModelLoader;addModel(Lnet/minecraft/client/util/ModelIdentifier;)V", ordinal = 3 , shift= At.Shift.AFTER))
-    public void addHandheldModel(BlockColors blockColors , Profiler profiler , Map<Identifier , JsonUnbakedModel> jsonUnbakedModels , Map<Identifier , List<ModelLoader.SourceTrackedData>> blockStates , CallbackInfo ci){
+    @Inject(method = "<init>" , at = @At(value = "INVOKE", target = "Ljava/util/Collection;forEach(Ljava/util/function/Consumer;)V" , shift= At.Shift.BEFORE))
+    public void daggerlance$addHandheldModel(BlockColors blockColors , Profiler profiler , Map<Identifier , JsonUnbakedModel> jsonUnbakedModels , Map<Identifier , List<ModelLoader.SourceTrackedData>> blockStates , CallbackInfo ci){
         for(Pair<Item, Pair<ModelIdentifier, ModelIdentifier>> pair : DaggerLanceClient.SKIN_MODELS){
             this.addModel(pair.getRight().getRight());
             this.addModel(pair.getRight().getLeft());

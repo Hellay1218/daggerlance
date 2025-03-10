@@ -1,8 +1,6 @@
 package net.hellay.daggerlance.mixin;
 
 import net.hellay.daggerlance.DaggerLanceClient;
-import net.hellay.daggerlance.innit.ModItems;
-import net.hellay.daggerlance.item.DaggerLanceItem;
 import net.hellay.daggerlance.util.SkinUtil;
 import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.render.item.ItemModels;
@@ -25,8 +23,8 @@ import java.util.Objects;
 public abstract class ItemRendererMixin {
     @Shadow public abstract ItemModels getModels();
 
-    @ModifyVariable(method = "renderItem", at = @At(value = "HEAD"), argsOnly = true)
-    public BakedModel renderHandheldModel(BakedModel value, ItemStack stack, ModelTransformationMode renderMode, boolean leftHanded, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, int overlay) {
+    @ModifyVariable(method = "renderItem(Lnet/minecraft/item/ItemStack;Lnet/minecraft/client/render/model/json/ModelTransformationMode;ZLnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/client/render/VertexConsumerProvider;IILnet/minecraft/client/render/model/BakedModel;)V", at = @At(value = "HEAD"), argsOnly = true)
+    public BakedModel daggerlance$renderHandheldModel(BakedModel value, ItemStack stack, ModelTransformationMode renderMode, boolean leftHanded, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, int overlay) {
             for(Pair<Item, Pair<ModelIdentifier, ModelIdentifier>> pair : DaggerLanceClient.SKIN_MODELS){
                 Item item = pair.getLeft();
                 ModelIdentifier handheld = pair.getRight().getRight();

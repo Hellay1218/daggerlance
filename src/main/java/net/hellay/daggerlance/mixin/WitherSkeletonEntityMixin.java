@@ -32,13 +32,14 @@ public abstract class WitherSkeletonEntityMixin extends AbstractSkeletonEntity {
     )
     protected void equipDaggerLanceOnWitherSkeleton(Random random, LocalDifficulty localDifficulty, CallbackInfo ci) {
         if ((double)random.nextFloat() > 0.9) {
-            int i = random.nextInt(16);
-            if (i < 10) {
-            }
+            //int i = random.nextInt(16);
+//            if (i < 10) {
+//            }
             ItemStack stack = new ItemStack(ModItems.DAGGERLANCE);
-            stack.getOrCreateNbt().putString("skin" , DaggerLanceItem.Skin.values()[random.nextInt(DaggerLanceItem.Skin.values().length+1)].getName());
-                this.equipStack(EquipmentSlot.MAINHAND, stack);
-                this.updateDropChances(EquipmentSlot.MAINHAND);
+            stack.getOrCreateNbt().putString("skin" , DaggerLanceItem.Skin.values()[random.nextInt(DaggerLanceItem.Skin.values().length)].getName());
+            this.equipStack(EquipmentSlot.MAINHAND, stack);
+            this.setEquipmentDropChance(EquipmentSlot.MAINHAND , 0);
+            //this.updateDropChances(EquipmentSlot.MAINHAND);
         }
 
     }
